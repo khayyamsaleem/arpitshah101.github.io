@@ -1,0 +1,49 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="vl-navbar">
+  <style>
+    .vl-navbar {
+      padding: 15px;
+      text-align: center;
+    }
+    :host {
+      color: #C62828;
+      font-weight: 500;
+    }
+  </style>
+  <template>
+    <div>
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'vl-navbar'
+    });
+  </script>
+</dom-module>
+
+<dom-module id="vl-navlink">
+  <style>
+    :host {
+      margin: 0 15px;
+      padding: 5px;
+    }
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <template>
+    <a href="{{dest}}"><content></content></a>
+  </template>
+  <script>
+    Polymer({
+      is: 'vl-navlink',
+      properties: {
+        dest: String
+      }
+    });
+  </script>
+</dom-module>
