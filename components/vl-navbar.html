@@ -4,15 +4,15 @@
   <style>
     .vl-navbar {
       padding: 15px;
-      text-align: center;
+      text-align: right;
     }
     :host {
-      color: #C62828;
-      font-weight: 500;
+      color: #424242;
+      font-weight: 400;
     }
   </style>
   <template>
-    <div>
+    <div class="container">
       <content></content>
     </div>
   </template>
@@ -25,11 +25,14 @@
 
 <dom-module id="vl-navlink">
   <style>
-    :host {
-      margin: 0 15px;
-      padding: 5px;
+    a:hover {
+      background-color: #212121;
+      color: #EEEEEE;
     }
     a {
+      margin: 0 15px;
+      padding: 5px 10px;
+      border-radius: 15px;
       text-transform: uppercase;
       text-decoration: none;
       color: inherit;
