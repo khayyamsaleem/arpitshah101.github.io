@@ -1,0 +1,31 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id='target-scroller'>
+  <style>
+
+  </style>
+  <template>
+    <img src="/images/down-arrow.png" alt="" width="{{size}}" height="{{size}}" on-click="scrollToTarget">
+  </template>
+  <script>
+    Polymer({
+      is : 'target-scroller',
+      properties : {
+        targetId: String,
+        size: {
+          type: Number,
+          value: "75"
+        }
+      },
+      scrollToTarget : function(){
+        try{
+          document.getElementById(this.targetId).scrollIntoView(true);
+        }
+        catch (err) {
+          console.debug("Cannot scroll to " + this.targetId + ". Please make sure there is an element with that id value.");
+          console.debug(err);
+        }
+      }
+    });
+  </script>
+</dom-module>
