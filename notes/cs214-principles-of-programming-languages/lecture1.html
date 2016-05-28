@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Lecture 1 | Principles of Programming Languages</title>
+
+      <script src="/bower_components/webcomponentsjs/webcomponents.js" charset="utf-8"></script>
+      <link rel="stylesheet" href="/css/normalize.css" media="screen" title="no title" charset="utf-8">
+      <link rel="import" href="/components/vl-navbar.html">
+      <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+      <link rel="stylesheet" href="/css/github.css" media="screen" title="no title" charset="utf-8">
+
+  </head>
+  <body class='markdown-body'>
+    <vl-navbar>
+      <vl-navlink dest="#about">About Me</vl-navlink>
+      <vl-navlink dest="/notes.html">Notes</vl-navlink>
+    </vl-navbar>
+    <div class="container">
+
+      <h1 id="lecture-1">Lecture 1</h1>
+      <h2 id="athropomorphism">Athropomorphism</h2>
+      <p>Consider the similarities and the differences between human languages and programming languages.</p>
+      <p>Similarities:</p>
+      <ul>
+        <li>There is a syntax<ul>
+          <li>structure to a languages</li>
+        </ul>
+      </li>
+      <li>Semantics<ul>
+        <li>meaning to the language</li>
+      </ul>
+    </li>
+    <li>Can be used to express an algorithm</li>
+  </ul>
+  <p>The difference? Computer languages are:</p>
+  <ul>
+    <li>Rigid &amp; simple syntax</li>
+    <li>Unambiguous</li>
+    <li>Only for algorithms</li>
+  </ul>
+  <h2 id="considering-programming-languages">Considering Programming Languages</h2>
+  <p>Fact: Through various methods, one program in any language can be created using <em>any</em> other language.</p>
+  <p>Question: So does it really matter which language you use for a project?</p>
+  <p>Answer: <strong>Yes!</strong><br>Which computer language you use can influence how you think of the problem (i.e. recursive solutions) and how easily (or often) you make mistakes.</p>
+  <h3 id="goals-for-programming-languages">Goals for Programming Languages</h3>
+  <ul>
+    <li>Readable</li>
+    <li>Simple to learn</li>
+    <li>Portable (i.e. is it dependent on a specific OS like Mac?)</li>
+    <li>Abstraction<ul>
+      <li>control and data structures to hide details and organize</li>
+    </ul>
+  </li>
+  <li>Easy to catch errors early on through reading or simple debugging</li>
+  <li>Can be compiled into efficient code</li>
+</ul>
+<h2 id="paradigms">Paradigms</h2>
+<p><strong>Paradigm</strong> - how you look at the problem</p>
+<p>Example: Print a large X pattern</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>X&nbsp;&nbsp;&nbsp;X</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>X&nbsp;X</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>X</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>X&nbsp;X</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>X&nbsp;&nbsp;&nbsp;X</span></span></span></div></pre><p>You can do this recursively or you can perhaps just iterate line by line.</p>
+<h3 id="imperative-paradigm">Imperative Paradigm</h3>
+<p>In the imperative paradigm, a program is just a sequence of instructions manipulating memory data directly.</p>
+<ul>
+  <li>This fits the Von Neumann architecture closely.</li>
+  <li>When you pass parameters, they are passed by reference.<br>I.e. Think of this as Assembly.</li>
+</ul>
+<h3 id="functional-paradigm">Functional Paradigm</h3>
+<p>In the functional pradigm, a program is a collection of functions manipulating the data.</p>
+<ul>
+  <li>Variables are names which may or may not map to a memory location at any given time.</li>
+  <li>You work with the variable names rather than the memory locations directly.</li>
+  <li>When passing parameters, you may pass by value.</li>
+  <li>You can have recursion here rather than iteration.<br>I.e. Scheme/Lisp</li>
+</ul>
+<h3 id="logic-paradigm">Logic Paradigm</h3>
+<p>Programs are rules (like in proofs from Discrete 1) with the left side representing the current conditions and the right representing the implications.<br>Solutions in these programs are determined by <em>&quot;proving&quot;</em> the theorems.</p>
+<p>Example language: Prolog</p>
+<p>code:</p>
+<pre class="editor-colors lang-prolog"><div class="line"><span class="source prolog"><span class="entity name function declaration prolog"><span>sum</span></span><span>(</span><span class="constant numeric prolog"><span>0</span></span><span class="punctuation separator and prolog"><span>,</span></span><span>&nbsp;</span><span class="constant numeric prolog"><span>0</span></span><span>)</span><span class="punctuation separator statement prolog"><span>.</span></span></span></div><div class="line"><span class="source prolog"><span class="entity name function declaration prolog"><span>sum</span></span><span>(</span><span class="variable other prolog"><span>N</span></span><span class="punctuation separator and prolog"><span>,</span></span><span>&nbsp;</span><span class="variable other prolog"><span>S</span></span><span>)&nbsp;</span><span class="keyword operator definition prolog"><span>:-</span></span><span>&nbsp;</span><span class="variable other prolog"><span>N</span></span><span class="keyword operator gt prolog"><span>&gt;</span></span><span class="constant numeric prolog"><span>0</span></span><span class="punctuation separator and prolog"><span>,</span></span><span>&nbsp;</span><span class="variable other prolog"><span>X</span></span><span>&nbsp;</span><span class="keyword operator is prolog"><span>is</span></span><span>&nbsp;</span><span class="variable other prolog"><span>N</span></span><span class="keyword operator minus prolog"><span>-</span></span><span class="constant numeric prolog"><span>1</span></span><span class="punctuation separator and prolog"><span>,</span></span><span>&nbsp;</span><span class="entity name function declaration prolog"><span>sum</span></span><span>(</span><span class="variable other prolog"><span>X</span></span><span class="punctuation separator and prolog"><span>,</span></span><span>&nbsp;</span><span class="variable other prolog"><span>XX</span></span><span>)</span><span class="punctuation separator and prolog"><span>,</span></span><span>&nbsp;</span><span class="variable other prolog"><span>S</span></span><span>&nbsp;</span><span class="keyword operator is prolog"><span>is</span></span><span>&nbsp;</span><span class="variable other prolog"><span>N</span></span><span>&nbsp;</span><span class="keyword operator plus prolog"><span>+</span></span><span>&nbsp;</span><span class="variable other prolog"><span>XX</span></span><span class="punctuation separator statement prolog"><span>.</span></span></span></div></pre>
+<h3 id="object-oriented-paradigm">Object Oriented Paradigm</h3>
+<p>Program is oriented around communication between <em>objects</em>.<br>Objects can hold both data and operations/methods.<br>Key Operations are passing messages and invoking methods.<br>Example language: Java.</p></body>
+    </div>
+</html>
