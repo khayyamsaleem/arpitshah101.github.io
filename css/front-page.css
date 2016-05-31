@@ -1,0 +1,10 @@
+#resume-title {
+  font-weight: lighter;
+  text-align: center;
+  /*border-bottom: 1px solid #424242;*/
+  padding: 10px 0;
+}
+
+.location * {
+  height: 33px;
+}

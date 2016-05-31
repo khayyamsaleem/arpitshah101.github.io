@@ -2,7 +2,9 @@
 
 <dom-module id='target-scroller'>
   <style>
-
+    :host {
+      cursor: pointer;
+    }
   </style>
   <template>
     <img src="/images/down-arrow.png" alt="" width="{{size}}" height="{{size}}" on-click="scrollToTarget">
@@ -18,13 +20,19 @@
         }
       },
       scrollToTarget : function(){
-        try{
-          document.getElementById(this.targetId).scrollIntoView(true);
-        }
-        catch (err) {
-          console.debug("Cannot scroll to " + this.targetId + ". Please make sure there is an element with that id value.");
-          console.debug(err);
-        }
+        var elem = document.body, style = "scrollTop", unit = "", from = 0, to = document.getElementById(this.targetId).offsetTop, time= 2000, prop = true;
+        if( !elem) return;
+        var start = new Date().getTime(),
+        timer = setInterval(function() {
+          var step = Math.min(1,(new Date().getTime()-start)/time);
+          if (prop) {
+            elem[style] = (from+step*(to-from))+unit;
+          } else {
+            elem.style[style] = (from+step*(to-from))+unit;
+          }
+          if( step == 1) clearInterval(timer);
+        },25);
+        elem.style[style] = from+unit;
       }
     });
   </script>

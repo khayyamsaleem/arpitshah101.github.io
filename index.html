@@ -4,22 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Arpit Shah</title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<script src="/bower_components/webcomponentsjs/webcomponents.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="/css/normalize.css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
 	<link rel="import" href="/components/vl-navbar.html">
 	<link rel="import" href="/components/personal-desc.html">
 	<link rel="import" href="/components/target-scroller.html">
+	<link rel="import" href="/components/vl-resume.html">
+	<link rel="stylesheet" href="/css/front-page.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-
-	<!-- <section class="hero">
-		<section class="container">
-			<h1>Hello! I'm Arpit Shah.</h1>
-			Interested in AI & Robotics.<br>Learning new things everyday.
-
-		</section>
-	</section> -->
 	<vl-navbar>
 		<vl-navlink dest="#about">About Me</vl-navlink>
 		<vl-navlink dest="/notes.html">Notes</vl-navlink>
@@ -29,8 +25,73 @@
 		<div>Interested in AI & Robotics.<br>Learning new things everyday.</div>
 		<target-scroller target-id="resume-section"></target-scroller>
 	</personal-desc>
-	<div id="resume-section">
+	<div class="container" id="resume-section">
+		<h1 id="resume-title">Resume</h1>
+		<vl-resume>
+			<vl-resume-section section-title="Education">
+				<vl-resume-row>
+					<vl-resume-col col-size="3">
+						<h3 class="location">Rutgers University</h3>
+						<p class="time-range">Sept. 2014 - May 2018</p>
+					</vl-resume-col>
+					<vl-resume-col col-size="7">
+						<h3 class="position-title">Bachelor of Science - Computer Science</h3>
+						<div class="description">
+							<p>Relevant Courses:</p>
+							<ul>
+								<li>Data Structures</li>
+								<li>Computer Architecture</li>
+								<li>Systems Programming</li>
+								<li>Design and Analysis of Algorithms</li>
+								<li>Principles of Information &amp; Data Management</li>
+							</ul>
+						</div>
+					</vl-resume-col>
+				</vl-resume-row>
+				<vl-resume-row>
+					<vl-resume-col col-size="3">
+						<h3 class="location">Piscataway High School</h3>
+						<p class="time-range">Sept. 2010 - June 2014</p>
+					</vl-resume-col>
+					<vl-resume-col col-size="7">
+						<h3 class="position-title">High School Student</h3>
+						<p class="description">
+							Developed my interest in Computer Science and technology as a whole. Graduated as an AP Scholar with Distinction as a part of the top 10% of my graduating class.
+						</p>
+					</vl-resume-col>
+				</vl-resume-row>
+			</vl-resume-section>
 
+			<vl-resume-section section-title="Experience">
+				<vl-resume-row>
+					<vl-resume-col col-size="3">
+						<h3 class="location"><img src="/images/iconectiv-logo.png" alt="iconectiv"></h3>
+						<p class="time-range">June 2014 - Present</p>
+					</vl-resume-col>
+					<vl-resume-col col-size="7">
+						<h3 class="position-title">Software Development Intern</h3>
+						<ul class="description">
+							<li>Implemented full stack of new Test Case Database System using MVC architecture &amp; MongoDB Database</li>
+							<li>Contributed to 2 revenue-generating products (on client-facing features)</li>
+							<li>Currently contributing to 2 projects for developing prototypes demonstating new frameworks and features</li>
+						</ul>
+					</vl-resume-col>
+				</vl-resume-row>
+				<vl-resume-row>
+					<vl-resume-col col-size="3">
+						<h3 class="location">Rutgers University,<br><small>Computer Science Department</small></h3>
+						<p class="time-range">May 2016 - Present</p>
+					</vl-resume-col>
+					<vl-resume-col col-size="7">
+						<h3 class="position-title">Student Application Developer</h3>
+						<ul class="description">
+							<li>Developing new tool for use in the School of Arts &amp; Sciences Signature Course - Data 101</li>
+							<li>Working alongside a professor to develop a new course website for the Data 101 course</li>
+						</ul>
+					</vl-resume-col>
+				</vl-resume-row>
+			</vl-resume-section>
+		</vl-resume>
 	</div>
 </body>
 </html>
