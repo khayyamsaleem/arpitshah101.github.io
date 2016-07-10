@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var intro_section_component_1 = require('./intro-section.component');
+var FrontPageComponent = (function () {
+    function FrontPageComponent() {
     }
-    AppComponent = __decorate([
+    FrontPageComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: '<div class="card">My First Angular 2 App</div><div class="card card-1">My First Angular 2 App</div>'
+            selector: 'personal-website',
+            templateUrl: 'app/frontpage.component.html',
+            directives: [intro_section_component_1.IntroSectionComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], FrontPageComponent);
+    return FrontPageComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.FrontPageComponent = FrontPageComponent;
+//# sourceMappingURL=frontpage.component.js.map
